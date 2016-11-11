@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration form</title>
+    <style media="screen">
+        table {
+          border-collapse: collapse;
+          font-family: sans-serif;
+        }
+        table tr td {
+            border: 2px solid;
+            border-color: #bebcc2
+        }
+        .right {
+          text-align: right;
+          font-weight: bold;
+        }
+        .centre {
+          text-align: center;
+          background: #dbf0ed
+        }
+        .centre1 {
+          text-align: center;
+        }
+        input {
+          border-bottom-color: transparent;
+        }
+        textarea {
+          border-style: inset;
+        }
+        .button {
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <table cellspacing="0" cellpadding="4">
+            <tr>
+                <td class="right">
+                    <label for="lastName">Last Name</label>
+                </td>
+                <td colspan="3">
+                    <input id="lastName" type="text" name="lastName" placeholder="Last Name" size="35" value="Peshov">
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <label class="bord1" for="firstName">First Name</label>
+                </td>
+                <td colspan="3">
+                    <input id="firstName" type="text" name="firstName" placeholder="First Name" size="35" value="Pesho">
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <label for="address">Address</label>
+                </td>
+                <td colspan="3">
+                    <textarea id="address" name="address" rows="2" cols="31">17 Hristo Botev Str. floor 3, ap. 12</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <label for="city">City</label>
+                </td>
+                <td>
+                    <input id="city" type="text" name="city" size="24"value="Sofia">
+                </td>
+                <td class="centre1">
+                    <label for="state">State</label>
+                </td>
+                <td>
+                    <input id="state" type="text" name="state" size="1">
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <label for="postcode">Zip/Postal Code</label>
+                </td>
+                <td colspan="3">
+                    <input id="postcode" type="text" name="postCode" size="5" value="1000">
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <label for="country">Country</label>
+                </td>
+                <td colspan="3">
+                    <select id="country" name="country">
+                        <option selected="selected">Bulgaria</option>
+                        <option>Romania</option>
+                        <option>Greece</option>
+                        <option>Macedonia</option>
+                        <option>Serbia</option>
+                    </select>
+                </td>
+                <tr>
+                    <td class="right">
+                        <label for="phone">Phone (country code,<br/> area code, number)</label>
+                    </td>
+                    <td colspan="3">
+                      (+<input id="phone" type="tel" name="phone" value="359" size="1"> )
+                        <input id="phone" type="tel" name="phone" value="88" size="1">
+                      - <input id="phone" type="tel" name="phone" value="8334343" size="17">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="email">E-mail</label>
+                    </td>
+                    <td colspan="3">
+                        <input id="email" type="email" name="email" placeholder="@" size="35" value="nakov@kaspichan.org">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="month">Birth date</label>
+                    </td>
+                    <td colspan="3">
+                        <label for="month">Month</label>
+                        <input id="month" type="text" name="birthday" value="06" size="1">
+                        <label for="day">Day</label>
+                        <input id="day" type="text" name="birthday" value="14" size="1">
+                        <label for="year">Year (4 digit)</label>
+                        <input id="year" type="text" name="birthday" value="1980" size="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="gender"><span>Gender</span></label>
+                    </td>
+                    <td colspan="3">
+                        <select id="gender" type="text" name="gender" value="">
+                            <option>Male</option>
+                            <option>Famale</option>
+                            <option>Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="spring">Starting date</label>
+                    </td>
+                    <td colspan="3">
+                        <input id="spring" type="radio" name="name" value="" checked>
+                        <label for="spring">Spring 2006</label>
+                        <input id="summer" type="radio" name="name" value="">
+                        <label for="summer">Summer 2006</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="aditionalinfo">Coments/Questions</label>
+                    </td>
+                    <td colspan="3">
+                        <textarea id="aditionalinfo" name="aditionalInfo" rows="5" cols="36" placeholder="Pleace send me more information about the lodging.">Pleace send me more information about the lodging.</textarea>
+                    </td>
+                </tr>
+                <tr class="centre">
+                    <td colspan="4">
+                        <input class="button" type="submit" name="name" value="Submit">
+                        <input class="button" type="reset" name="name" value="Clear this form">
+                    </td>
+                </tr>
+        </table>
+    </form>
+</body>
+
+</html>
