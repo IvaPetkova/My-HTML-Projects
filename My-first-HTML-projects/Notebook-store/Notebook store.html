@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="utf-8">
+      <title>Notebook store</title>
+      <style media="screen">
+          .oneBorder {
+            border: colid;
+          }
+          table {
+            border-collapse: collapse;
+          }
+          .border-bottom {
+          }
+          .rightBorderHidden {
+            border-right: hidden;
+          }
+          #topBottomBorderHidden {
+            border-bottom: hidden;
+            border-top: hidden;
+          }
+          table {
+            font-family: sans-serif;
+            border-width: 2px;
+            border-color: #c1c1bd;
+          }
+          th {
+            color: #03b6fc;
+            text-shadow: 1px 0px #CDF0FE;
+            font-size: 17px;
+          }
+      </style>
+  </head>
+
+    <body>
+        <form action="index.html" method="post">
+
+            <table class="border-bottom" cellspacing="0" cellpadding="9" border="solid">
+                <thead>
+                    <tr>
+                        <th colspan="2"><u>Apple</u> <u>Toshiba</u> <u>Lenovo</u> <u>Dell</u> <u>Asus</u> <u>Acer</u> <u>HP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rightBorderHidden">
+                            <table cellspacing="0" cellpadding="4" border="solid">
+                                <form class="" action="index.html" method="post">
+                                    <tr>
+                                        <td class="rightBorderHidden">
+                                            <fieldset>
+                                                <legend>Apple MacBook Air</legend>
+                                                <img src="Images\Apple MacBook.png" width="130px"//>
+                                            </fieldset>
+                                        </td>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Apple MacBook Air</legend>
+                                                <img src="Images\Apple MacBook.png" width="130px"/>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="rightBorderHidden" id="topBottomBorderHidden">
+                                            <fieldset>
+                                                <legend>Apple MacBook Air</legend>
+                                                <img src="Images\Apple MacBook.png" width="130px"/>
+                                            </fieldset>
+                                        </td>
+                                        <td id="topBottomBorderHidden">
+                                            <fieldset>
+                                                <legend>Apple MacBook Air</legend>
+                                                <img src="Images\Apple MacBook.png" width="130px"/>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="rightBorderHidden">
+                                            <fieldset>
+                                                <legend>Apple MacBook Air</legend>
+                                                <img src="Images\Apple MacBook.png" width="130px"/>
+                                            </fieldset>
+                                        </td>
+                                        <td>
+                                            <fieldset>
+                                                <legend>Apple MacBook Air</legend>
+                                                <img src="Images\Apple MacBook.png" width="130px"/>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </table>
+                        </td>
+                        <td>
+                             <table cellspacing="0" cellpadding="11">
+                               <colgroup>
+                                 <col width="170px"/>
+                               </colgroup>
+                                 <tr>
+                                     <td>
+                                         <label>Min price:&nbsp&nbsp&nbsp500USD</label>
+                                         <input type="range" name="minPrice"/>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                       <label>Max price: 1500USD</label>
+                                       <input type="range" name="maxPrice" value=""/>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                       <label>Min RAM:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4GB</label>
+                                       <input type="range" name="minRAM" value=""/>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                       <label>Max RAM:&nbsp&nbsp&nbsp&nbsp&nbsp16GB</label>
+                                       <input type="range" name="maxRAM" value=""/>
+                                     </td>
+                                 </tr>
+                             </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+    </body>
+
+</html>
