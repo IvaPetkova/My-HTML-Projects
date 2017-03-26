@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title>Forms</title>
+		<style>
+			.info, .terms {
+				border-radius: 20px;
+				border-color: red
+			}
+		</style>
+	</head>
+	<body>
+		<form action="#" method="post">
+			<fieldset class="info">
+				<legend>User info</legend>
+				<label for="name">Username:</label>
+				<input id="name" type="text" name="firstName" placeholder="First name" required="required" autofocus="autofocus">
 
-<head>
-    <meta charset="utf-8">
-    <title>Forms</title>
-    <style>
-      .info {
-        border-radius: 20px;
-        border-color: red
-      }
-      .terms {
-        border-radius: 20px;
-        border-color: red
-      }
-    </style>
-</head>
-<body>
-    <form action="#" method="post">
-      <fieldset class="info">
-        <legend>User info</legend>
-        <label for="name">Username:</label>
-        <input id="name" type="text" name="firstName" placeholder="First name" required="required" autofocus="autofocus">
+				<br>
+				<label for="pass">Password:&nbsp;</label>
+				<input id="pass" type="password" name="pass" placeholder="Password" required="required">
 
-        <br>
-        <label for="pass">Password:&nbsp</label>
-        <input id="pass" type="password" name="pass" placeholder="Password" required="required">
+				<br>
+				<label for="email">E-mail: </label>
+				<input id="email" type="email" name="email" placeholder="e-mail">
 
-        <br>
-        <label for="email">E-mail:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-        <input id="email" type="email" name="email" placeholder="e-mail">
+				<br>
+				<textarea name="info" rows="3" cols="30" placeholder="Aditional info.."></textarea>
 
-        <br>
-        <textarea name="info" rows="3" cols="30" placeholder="Aditional info.."></textarea>
+				<br>
+				<label for="subjects">Choice a subject:</label>
+				<select id="subjects" name="subjects">
+				<option value="geo">Geography</option>
+				<option value="math">Maths</option>
+				<option value="eng">English</option>
+			</select>
 
-        <br>
-        <label for="subjects">Choice a subject:</label>
-        <select id="subjects" name="subjects">
-        <option value="geo">Geography</option>
-        <option value="math">Maths</option>
-        <option value="eng">English</option>
-      </select>
+				<br>
+				 Gender:
+				<label for="male">Male</label>
+				<input id="male" type="radio" name="gender" value="male" checked>
+				<label for="female">Female</label>
+				<input id="female" type="radio" name="gender" value="female">
+		 </fieldset>
 
-        <br>
-         Gender:
-        <label for="male">Male</label>
-        <input id="male" type="radio" name="gender" value="male" checked>
-        <label for="female">Female</label>
-        <input id="female" type="radio" name="gender" value="female">
-     </fieldset>
+		 <fieldset class="terms">
+			 <legend>Terms and conditions</legend>
+				<label for="terms">Accept the terms..</label>
+				<input id="terms" type="checkbox" name="accept" required="required" value="check">
+		 </fieldset>
 
-     <fieldset class="terms">
-       <legend>Terms and conditions</legend>
-        <label for="terms">Accept the terms..</label>
-        <input id="terms" type="checkbox" name="accept" required="required" value="check">
-     </fieldset>
-
-        <input type="reset" name="reset" value="Clear form">
-        <input type="submit" name="submit" value="Submit">
-    </form>
-</body>
-
+				<input type="reset" name="reset" value="Clear form">
+				<input type="submit" name="submit" value="Submit">
+		</form>
+	</body>
 </html>
