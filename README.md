@@ -1,3 +1,3 @@
-# Wether app
+# Weather app
 
 In progress
