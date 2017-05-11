@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Weather app</title>
+	<meta charset=utf-8>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../styles/index.css" />
+
+	<!-- Scripts -->
+	<!--<script src="../js/scripts/jquery-3.2.1.min.js"></script>-->
+	<script src="../js/scripts/handlebars.min.js"></script>
+
+	<!--ToDo remove script bottom-->
+	<script src="../js/scripts/data.js" type="text/javascript"></script>
+	<script src="../js/scripts/script.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<script class="weather-template" type="text/x-handlebars-template">
+			<h1 class="header">Weather forecast for {{city.name}}</h1>
+
+			{{#list}}
+			<div class="weather-container">
+
+				{{#weather}}
+				<img class="icon" alt="light rain" src="http://openweathermap.org/img/w/{{icon}}.png" />
+				 {{/weather}}
+				 {{#weather}}
+				<div class="small_val" title="Weather">{{description}}</div>
+				{{/weather}}
+				<div class="small_val" title="Temp">{{main.temp}} °C</div>
+				{{#wind}}
+				<div class="small_val" title="Wind">{{speed}} m/s</div>
+				{{/wind}} {{#main}}
+				<div class="small_val grey" title="Pressure">{{pressure}}</div>
+				{{/main}}
+			</div>
+			{{/list}}
+		</script>
+	</div>
+</body>
+
+</html>
