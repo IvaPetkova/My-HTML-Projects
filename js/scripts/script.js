@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    wrapper = document.querySelector('.wrapper'),
+    wrapper = document.querySelector('.app-component'),
         htmlTemplate = document.querySelector('.weather-template').innerText,
         template = Handlebars.compile(htmlTemplate);
 
