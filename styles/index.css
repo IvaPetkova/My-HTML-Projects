@@ -1,37 +1,45 @@
 @import 'global/reset.css';
 @import 'global/grid.css';
+
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 body {
-  background: #ccc;
-  font-family: Arial, Helvetica, sans-serif;
+	background: #ccc;
+	font-family: Arial, Helvetica, sans-serif;
 }
+
 body .header {
-  color: #fff;
-  text-align: center;
-  text-shadow: 1px 2px 5px #666;
-  font-size: 2rem;
-  margin: 50px 0;
+	color: #fff;
+	text-align: center;
+	text-shadow: 1px 2px 5px #666;
+	font-size: 2rem;
+	margin: 50px 0;
 }
+
 body .weather-container {
 	padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0px 1px 3px #808080;
-  text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 1px 3px #808080;
+	text-align: center;
 }
+
 body .weather-container .icon {
-  vertical-align: middle;
+	vertical-align: middle;
 }
+
 body .weather-container:hover {
-  cursor: pointer;
-  box-shadow: 2px 2px 7px #808080;
+	cursor: pointer;
+	box-shadow: 2px 2px 7px #808080;
 }
+
 body .weather-container .small_val {
-  display: block;
-  clear: left;
-  font-size: 0.8rem;
+	display: block;
+	clear: left;
+	font-size: 0.8rem;
 }
+
 body .weather-container .grey {
-  color: #fff;
+	color: #fff;
 }
