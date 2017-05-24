@@ -1,0 +1,19 @@
+.search-component {
+	margin: 50px 0;
+}
+.search-component .search-area,
+.search-component .search-area input[type=text] {
+	width: 366px;
+	height: 32px;
+}
+.search-component .search-area label {
+	font-size: 13px;
+	color: #444;
+}
+.search-component .button {
+	width: 205px;
+	height: 65px;
+	font-size: 26px;
+	border-radius: 0;
+	border: 1px solid #b9b9b9;
+}
