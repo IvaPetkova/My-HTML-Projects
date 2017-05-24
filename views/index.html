@@ -20,12 +20,21 @@
 
 <body>
 	<div class="app-component">
-		<div class="weatherLogoBackground">
+		<script class="weather-template" type="text/x-handlebars-template">
+
+			<!--<div class="weatherLogoBackground">
 			<span class="weatherLogoText ng-binding">
 				See The Weather
 			</span>
-		</div>
-		<script class="weather-template" type="text/x-handlebars-template">
+		</div>-->
+			<form name="searchedCity" class="ng-dirty ng-valid-parse ng-submitted ng-invalid ng-invalid-required">
+				<div class="searchArea">
+					<label for="search">Enter name of a city and press search:</label>
+					<input type="text" name="nameCity" ng-model="NameOfTheCity" required="" class="ng-touched ng-dirty ng-valid-parse ng-empty ng-invalid ng-invalid-required">
+				</div>
+				<button class="button" ng-click="register(searchedCity)" ng-disabled="searchedCity.$invalid" disabled="disabled">Search</button>
+			</form>
+
 			<h1 class="header">Weather forecast for {{city.name}}</h1>
 			<div class="container">
 				{{#list}}
