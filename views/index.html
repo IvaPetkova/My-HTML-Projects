@@ -21,34 +21,38 @@
 <body>
 	<div class="app-component">
 		<script class="weather-template" type="text/x-handlebars-template">
-			<div class="forecast-data-component">
-				<h1 class="header">Weather forecast for {{city.name}}</h1>
-				<div class="container">
-					{{#list}}
-					<div class="two columns weather-container">
+			<div class="wrap">
+				<div class="forecast-data-component">
+					<h1 class="header">Weather forecast for {{city.name}}</h1>
+					<div class="container">
+						{{#list}}
+						<div class="two columns weather-container">
 
-						{{#weather}}
-						<img class="icon" alt="light rain" src="http://openweathermap.org/img/w/{{icon}}.png" /> {{/weather}} {{#weather}}
-						<div class="small_val" title="Weather">{{description}}</div>
-						{{/weather}}
-						<div class="small_val" title="Temp">{{main.temp}} °C</div>
-						{{#wind}}
-						<div class="small_val" title="Wind">{{speed}} m/s</div>
-						{{/wind}}
-						
-						{{#main}}
-						<div class="small_val grey" title="Pressure">{{pressure}}</div>
-						{{/main}}
+							{{#weather}}
+							<img class="icon" alt="light rain" src="http://openweathermap.org/img/w/{{icon}}.png" /> {{/weather}} {{#weather}}
+							<div class="small_val" title="Weather">{{description}}</div>
+							{{/weather}}
+							<div class="small_val" title="Temp">{{main.temp}} °C</div>
+							{{#wind}}
+							<div class="small_val" title="Wind">{{speed}} m/s</div>
+							{{/wind}}
+							
+							{{#main}}
+							<div class="small_val grey" title="Pressure">{{pressure}}</div>
+							{{/main}}
+						</div>
+						{{/list}}
 					</div>
-					{{/list}}
 				</div>
-			</div>
-			<div class="search-component">
-				<div class="search-area">
-					<label for="search">Enter name of a city and press search:</label>
-					<input id="search" type="text" name="nameCity" ng-model="NameOfTheCity" required="" class="ng-touched ng-dirty ng-valid-parse ng-empty ng-invalid ng-invalid-required">
+				<div class="search-component">
+					<div class="search-area">
+						<label for="search">Enter name of a city and press search:</label>
+						<input id="search" type="text" name="nameCity" ng-model="NameOfTheCity" required="" class="ng-touched ng-dirty ng-valid-parse ng-empty ng-invalid ng-invalid-required">
+					</div>
+					<div class="btn" disabled="disabled">
+						<span>Search</span>
+					</div>
 				</div>
-				<button class="button" ng-click="register(searchedCity)" ng-disabled="searchedCity.$invalid" disabled="disabled">Search</button>
 			</div>
 		</script>
 	</div>
