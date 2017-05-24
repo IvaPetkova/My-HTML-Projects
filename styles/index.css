@@ -1,8 +1,13 @@
 @import 'global/reset.css';
 @import 'global/grid.css';
 @import 'components/ForecastData.css';
+@import 'components/App.css';
 * {
 	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
 }
 body {
 	background: #f9f7f4;

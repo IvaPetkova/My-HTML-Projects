@@ -21,12 +21,11 @@
 <body>
 	<div class="app-component">
 		<script class="weather-template" type="text/x-handlebars-template">
-
 			<!--<div class="weatherLogoBackground">
 			<span class="weatherLogoText ng-binding">
 				See The Weather
 			</span>
-		</div>-->
+			</div>-->
 			<form name="searchedCity" class="ng-dirty ng-valid-parse ng-submitted ng-invalid ng-invalid-required">
 				<div class="searchArea">
 					<label for="search">Enter name of a city and press search:</label>
@@ -48,6 +47,7 @@
 						{{#wind}}
 						<div class="small_val" title="Wind">{{speed}} m/s</div>
 						{{/wind}}
+						
 						{{#main}}
 						<div class="small_val grey" title="Pressure">{{pressure}}</div>
 						{{/main}}
