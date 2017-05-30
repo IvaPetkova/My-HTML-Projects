@@ -24,25 +24,25 @@
 		<script class="weather-template" type="text/x-handlebars-template">
 			<div class="wrapper">
 				<div class="forecast-data-component">
-					<h1 class="header">Weather forecast for {{city.name}}</h1>
+					<h1 class="header">Weather forecast for {{location.name}}</h1>
 					<div class="content">
-						{{#list}}
-						<div class="two columns weather-container">
 
-							{{#weather}}
-							<img class="icon" alt="light rain" src="http://openweathermap.org/img/w/{{icon}}.png" /> {{/weather}} {{#weather}}
-							<div class="small_val" title="Weather">{{description}}</div>
-							{{/weather}}
-							<div class="small_val" title="Temp">{{main.temp}} °C</div>
+						{{#forecast}} {{#each forecastday}}
+						<div class="three columns weather-container">
+							
+							<div class="small_val" title="Weather">{{date}}</div>
+							<img class="icon" alt="light rain" src="{{day.condition.icon}}" />
+							<div class="small_val" title="Temp">{{day.avgtemp_c}} °C</div>
+							<span class="weather-text">{{day.condition.text}}</span>
 							{{#wind}}
 							<div class="small_val" title="Wind">{{speed}} m/s</div>
-							{{/wind}}
-							
-							{{#main}}
+							{{/wind}} {{#main}}
 							<div class="small_val grey" title="Pressure">{{pressure}}</div>
 							{{/main}}
+
 						</div>
-						{{/list}}
+						{{/each}} {{/forecast}}
+
 					</div>
 				</div>
 				<div class="search-component">
