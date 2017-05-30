@@ -1,0 +1,3 @@
+var currentWeather = JSON.parse(
+	'{"location":{"name":"Sofia","region":"Grad Sofiya","country":"Bulgaria","lat":42.68,"lon":23.32,"tz_id":"Europe/Sofia","localtime_epoch":1496157582,"localtime":"2017-05-30 18:19"},"current":{"last_updated_epoch":1496157305,"last_updated":"2017-05-30 18:15","temp_c":26.0,"temp_f":78.8,"is_day":1,"condition":{"text":"Partly cloudy","icon":"//cdn.apixu.com/weather/64x64/day/116.png","code":1003},"wind_mph":4.3,"wind_kph":6.8,"wind_degree":280,"wind_dir":"W","pressure_mb":1016.0,"pressure_in":30.5,"precip_mm":0.0,"precip_in":0.0,"humidity":30,"cloud":25,"feelslike_c":25.4,"feelslike_f":77.7,"vis_km":10.0,"vis_miles":6.0}}'
+	);
