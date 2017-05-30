@@ -4,5 +4,5 @@ window.onload = function () {
 		htmlTemplate = document.querySelector('.weather-template').innerText,
 		template = Handlebars.compile(htmlTemplate);
 
-	wrapper.innerHTML = (template(currentWeather));
+	wrapper.innerHTML = (template(forecastWeather));
 };
