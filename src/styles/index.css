@@ -1,8 +1,8 @@
 @import 'global/reset.css';
 @import 'global/grid.css';
-@import 'components/ForecastData.css';
-@import 'components/App.css';
-@import 'components/Search.css';
+@import './components/ForecastData.css';
+@import './components/App.css';
+@import './components/Search.css';
 * {
 	box-sizing: border-box;
 }

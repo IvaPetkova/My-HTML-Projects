@@ -1,26 +1,26 @@
 'use strict';
 
-const Config = require('./Config');
+// const Config = require('./Config');
 const template = require('views/pages/index.hbs');
-const data = require('./weather data/ForecastWeather');
+const data = require('./data/ForecastWeather');
 
 class App {
 
-	constructor(){
+	constructor() {
 		this.update();
 	}
 
-// Public methods -------------------------------------------------------
-	update(value){
+	// Public methods -------------------------------------------------------
+	update(value) {
 		this._render(value);
 	}
 
-// Private methods ------------------------------------------------------
-	_render(value){
+	// Private methods ------------------------------------------------------
+	_render(value) {
 
-let html = template(data);
-let container = document.querySelector('.app-component');
-container.innerHTML = html;
+		let html = template(data);
+		let container = document.querySelector('.app-component');
+		container.innerHTML = html;
 
 	}
 }
