@@ -17,13 +17,13 @@
 
 	<script src="../js/data/CurrentWeather.js" type="text/javascript"></script>
 	<script src="../js/data/ForecastWeather.js" type="text/javascript"></script>
-	<!--<script src="../js/App.js" type="text/javascript"></script>-->
+	<script src="../js/App.js" type="text/javascript"></script>
 	<script src="../js/dataOptions.js" type="text/javascript"></script>
 
 </head>
 
 <body>
-	<div class="app-component">
+	<div class="app-container">
 		<script class="weather-template" type="text/x-handlebars-template">
 			<div class="wrapper">
 				<div class="forecast-data-component">
@@ -35,13 +35,14 @@
 							{{#if current}}
 							<div class="three columns weather-container">
 								<div class="small_val" title="Weather">{{location.country}}</div>
+
 								<img class="icon" alt="light rain" src="{{day.condition.icon}}" />
 								<div class="small_val" title="Temp">{{current.temp_c}} °C</div>
 								<span class="weather-text">{{day.condition.text}}</span>
 								<div class="small_val" title="Wind">{{current.condition.text}}</div>
-							{{#if location}}
-								<div class="date" title="Pressure">{{location.localtime}}</div>
-							{{/if}}
+								{{#if location}}
+									<div class="date" title="Pressure">{{location.localtime}}</div>
+								{{/if}}
 							</div>
 							{{/if}}
 						</div>
