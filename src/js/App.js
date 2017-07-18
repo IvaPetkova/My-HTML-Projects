@@ -1,6 +1,6 @@
 'use strict';
 
-const template = require('../views/pages/App.hbs');
+const template = require('../views/index.hbs');
 const Search = require('./pages/search');
 
 class App {
@@ -22,7 +22,6 @@ class App {
 
 		let search = new Search();
 		container.querySelector('.app-component').appendChild(search.container);
-		// console.error(search);
 
 	}
 }
