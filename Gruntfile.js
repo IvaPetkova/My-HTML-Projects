@@ -51,8 +51,14 @@ module.exports = function (grunt) {
 		},
 		uglify: {
 			js: {
-				files: {
-					'./dist/app.min.js': ['./src/js/**/*.js']
+				compile: {
+					options: {
+						compress: true
+					},
+
+					files: {
+						'./dist/app.min.js': './src/js/**/*.js'
+					}
 				}
 			}
 		},

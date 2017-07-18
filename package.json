@@ -2,7 +2,12 @@
 	"name": "weather-app",
 	"version": "0.1.0",
 	"main": "main.js",
+	"scripts": {
+		"build": "babel src/js -d dist/js"
+	},
 	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-preset-es2015": "^6.24.1",
 		"bower": "^1.8.0",
 		"grunt": "~0.4.5",
 		"grunt-contrib-connect": "^1.0.2",
