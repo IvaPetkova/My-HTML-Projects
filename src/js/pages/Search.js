@@ -1,18 +1,18 @@
 'use strict';
 
-const template = require('../../views/pages/search.hbs');
+const template = require('../../views/pages/Search.hbs');
 
 class SearchComponent {
 
-    constructor() {
-        this.container = document.createElement('div');
-        this.container.className = 'search-container';
+	constructor() {
+		this.container = document.createElement('div');
+		this.container.className = 'search-container';
 		this.render();
-    }
+	}
 
-    render() {
-        this.container.innerHTML = template();
-    }
+	render() {
+		this.container.innerHTML = template();
+	}
 
 }
 

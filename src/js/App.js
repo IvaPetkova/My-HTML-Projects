@@ -1,21 +1,15 @@
 'use strict';
 
 const template = require('../views/index.hbs');
-const Search = require('./pages/search');
+const Search = require('./pages/search.js');
 
 class App {
 
 	constructor() {
-		this.update();
+		this._render();
 	}
 
-	// Public methods -------------------------------------------------------
-	update(value) {
-		this._render(value);
-	}
-
-	// Private methods ------------------------------------------------------
-	_render(value) {
+	_render() {
 		let html = template();
 		let container = document.querySelector('.app-container');
 			container.innerHTML = html;
