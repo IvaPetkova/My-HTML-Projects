@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
 
+require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
 		connect: {
 			options: {
@@ -45,7 +47,8 @@ module.exports = function (grunt) {
 				files: [
 					'./src/js/**/*.js',
 					'./src/styles/**/*.css',
-					'./src/views/**/*.html',
+					'./src/styles/**/*.hbs',
+					'./src/views/**/*.html'
 					],
 			}
 		},
@@ -72,6 +75,17 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		babel: {
+			options: {
+				sourceMap: true,
+				presets: ['babel-preset-es2015']
+			},
+			dist: {
+				files: {
+					'./dist/app.min.js': './src/js/**/*.js'
+				}
+			}
+		},
 	});
 
 	//Load plugins
@@ -81,5 +95,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	//Task lists
-	grunt.registerTask('build', ['uglify', 'stylus', 'connect', 'watch']);
+	grunt.registerTask('build', ['babel', 'uglify', 'stylus', 'connect', 'watch']);
 };
