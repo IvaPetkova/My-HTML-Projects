@@ -93,6 +93,6 @@ module.exports = function(grunt) {
 	grunt.initConfig(config);
 	grunt.registerTask('build:dev',  ['checkDependencies', 'clean', 'stylus:build', 'browserify:dev', 'connect']);
 	grunt.registerTask('build:prod', ['checkDependencies', 'clean', 'stylus:build', 'browserify:prod', 'connect']);
-	grunt.registerTask('watchers', ['build:dev', 'watch']);
+	grunt.registerTask('build', ['build:dev', 'watch']);
 
 };
