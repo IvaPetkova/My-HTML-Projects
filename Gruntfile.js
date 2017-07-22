@@ -1,99 +1,98 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
-require('load-grunt-tasks')(grunt);
+	var config = {
 
-	grunt.initConfig({
-		connect: {
-			options: {
-				port: 9001,
-				livereload: 35729,
-				hostname: 'localhost',
-			},
-			livereload: {
-				options: {
-					open: true,
-					base: [
-						'Weather-app'
-					]
-				}
-			}
+	pkg: grunt.file.readJSON('package.json'),
+
+	checkDependencies: {
+		options: {
+			checkGitUrls: true,
+			install: false
 		},
-		watch: {
-			js: {
-				files: ['Gruntfile.js', './src/js/**/*.js'],
-				tasks: ['uglify'],
-				options: {
-					livereload: true
-				}
-			},
-			stylus: {
-				files: ['src/styles/**/*.styl'],
-				tasks: ['stylus'],
-				options: {
-					livereload: true
-				}
-			},
-			html: {
-				files: ['src/views/**/*.html'],
-				tasks: ['stylus'],
-				options: {
-					livereload: true
-				}
-			},
-			livereload: {
-				options: {
-					livereload: '35729'
-				},
-				files: [
-					'./src/js/**/*.js',
-					'./src/styles/**/*.css',
-					'./src/styles/**/*.hbs',
-					'./src/views/**/*.html'
-					],
-			}
-		},
-		uglify: {
-			js: {
-				compile: {
-					options: {
-						compress: true
-					},
+		build: {}
+	},
 
-					files: {
-						'./dist/app.min.js': './src/js/**/*.js'
-					}
-				}
-			}
+	stylus: {
+		build: {
+		options: {
+			sourcemap: {inline: true},
+			compress: false,
+			'include css': true
+		},
+		files: {
+			'dist/app.min.css': ['src/styles/**/*.styl']
+		}
+		}
+	},
+
+	browserify: {
+		options: {
+		watch: true,
+		transform: [
+			['hbsfy', {'extensions': ['hbs']}],
+			['babelify', {presets: ['es2015'], plugins: ['transform-class-properties']}]
+		]
+		},
+		dev: {
+		options: {
+			browserifyOptions: {debug: true},
+			plugin: [
+			['minifyify', {map: 'app.min.map', output: 'dist/app.min.map'}]
+			]
+		},
+		files: {'dist/app.min.js': 'src/js/main.js'}
+		},
+		prod: {
+		options: {
+			plugin: [
+			['minifyify', {map: false}]
+			]
+		},
+		files: {'dist/app.min.js': 'src/js/main.js'}
+		}
+	},
+
+	clean: {
+		build: ['dist/**/*.*']
+	},
+
+	watch: {
+		options: {
+
 		},
 		stylus: {
-			compile: {
-				options: {
-					compress: true
-				},
-				files: {
-					'./dist/app.min.css': './src/styles/**/*.styl'
-				}
-			}
+		files: ['src/styles/**/*.+(styl|css)'], tasks: 'stylus'
 		},
-		babel: {
+		rebuild: {
+		files: ['Gruntfile.js'], tasks: 'build:dev'
+		},
+		justreload: {
+		files: ['dist/app.min.js', 'test/*.html'], tasks: []
+		}
+	},
+
+	connect: {
+		options: {
+			port: 8088,
+			livereload: 35729,
+			hostname: 'localhost',
+		},
+		livereload: {
 			options: {
-				sourceMap: true,
-				presets: ['babel-preset-es2015']
-			},
-			dist: {
-				files: {
-					'./dist/app.min.js': './src/js/**/*.js'
-				}
+				open: true,
+				base: [
+					'Weather-app'
+				]
 			}
-		},
-	});
+		}
+	}
+	};
 
-	//Load plugins
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-stylus');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	require('load-grunt-tasks')(grunt);
 
-	//Task lists
-	grunt.registerTask('build', ['babel', 'uglify', 'stylus', 'connect', 'watch']);
+	grunt.initConfig(config);
+	grunt.registerTask('build:dev',  ['checkDependencies', 'clean', 'stylus:build', 'browserify:dev', 'connect']);
+	grunt.registerTask('build:prod', ['checkDependencies', 'clean', 'stylus:build', 'browserify:prod', 'connect']);
+	grunt.registerTask('watchers', ['build:dev', 'watch']);
+
 };
