@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		build: {
 		options: {
 			sourcemap: {inline: true},
-			compress: false,
+			compress: true,
 			'include css': true
 		},
 		files: {
