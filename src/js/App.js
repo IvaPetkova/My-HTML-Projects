@@ -1,7 +1,7 @@
 'use strict';
 
 const template = require('../views/index.hbs');
-const Search = require('./pages/search.js');
+const Search = require('./pages/Search.js');
 
 class App {
 
