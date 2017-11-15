@@ -10,12 +10,14 @@ class App {
 	}
 
 	_render() {
-		let html = template();
+		// let html = template();
 		let container = document.querySelector('.app-container');
-			container.innerHTML = html;
+			container.innerHTML = template();
+
+			console.log('container.innerHTML = template();');
 
 		let search = new Search();
-		container.querySelector('.app-component').appendChild(search.container);
+		container.querySelector('.app').appendChild(search.container);
 
 	}
 }

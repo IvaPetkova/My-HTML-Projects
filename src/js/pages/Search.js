@@ -2,7 +2,7 @@
 
 const template = require('../../views/pages/Search.hbs');
 
-class SearchComponent {
+class SearchPage {
 
 	constructor() {
 		this.container = document.createElement('div');
@@ -16,4 +16,4 @@ class SearchComponent {
 
 }
 
-module.exports = SearchComponent;
+module.exports = SearchPage;
