@@ -45,7 +45,11 @@ module.exports = function(grunt) {
 
 			},
 			stylus: {
-				files: ['src/styles/**/*.+(styl|css)'], tasks: 'stylus'
+				files: 'src/styles/**/*.styl',
+				tasks: 'stylus',
+				options: {
+					spawn: false,
+				}
 			}
 		},
 
@@ -63,6 +67,6 @@ module.exports = function(grunt) {
 
 	grunt.initConfig(config);
 
-	grunt.registerTask('build', ['clean', 'stylus:build', 'connect', 'browserify:dev']);
+	grunt.registerTask('build', ['clean', 'stylus', 'connect', 'browserify']);
 
 };
