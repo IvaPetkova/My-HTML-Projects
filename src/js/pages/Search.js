@@ -12,7 +12,30 @@ class SearchPage {
 
 	render() {
 		this.container.innerHTML = template();
+
+		let searchValue = this.container.querySelector('.search-value');
+		let button = this.container.querySelector('.btn');
+
+		searchValue.addEventListener('input', () => {
+
+			if(searchValue.value.length > 0) {
+				button.classList.remove('disabled');
+			}
+			else {
+				button.classList.add('disabled');
+			}
+
+		});
+
+		button.addEventListener('click', () => {
+			if(searchValue.value.length !== 0) {
+				search();
+			}
+		});
+
 	}
+
+
 
 }
 
