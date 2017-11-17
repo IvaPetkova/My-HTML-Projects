@@ -13,18 +13,16 @@ class App {
 
 	_render() {
 		let container = document.querySelector('.app-container');
-
-
 		container.innerHTML = template();
 
 		let logo = new Logo();
-		container.querySelector('.app').appendChild(logo.container);
+		container.querySelector('.visible-box').appendChild(logo.container);
 
-		let search = new Search();
+		let currentWeather = new CurrentWeather(search);
+		container.querySelector('.visible-box').appendChild(currentWeather.container);
+
+		let search = new Search(logo, currentWeather);
 		container.querySelector('.app').appendChild(search.container);
-
-		let currentWeather = new CurrentWeather();
-		container.querySelector('.app').appendChild(currentWeather.container);
 
 	}
 }

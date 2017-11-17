@@ -1,0 +1,28 @@
+.current-weather-container
+	opacity: 0
+	background: rgba(158, 160, 151, 0.5)
+	box-shadow: 4px 0 25px 3px rgba(0, 0, 0, 0.1)
+	border-radius: 50%
+	width: 350px
+	height: 350px
+	position: relative
+	.current-weather
+		font-size: 1.6rem
+		font-family: cursive
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		text-align: center
+		color: #ccc
+		span
+			display: block
+		.city-name
+			margin-bottom: 8px
+			font-size: 1.8rem
+		.condition-text
+			margin-top: -9px
+
+	&.show
+		opacity: 1
+		transition: opacity .3s
