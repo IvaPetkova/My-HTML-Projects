@@ -1,13 +1,18 @@
 'use strict';
 
 const template = require('../../views/pages/Search.hbs');
+const Logo = require('../components/Logo.js');
 
 class SearchPage {
 
-	constructor() {
+	constructor(logo, currentWeather) {
 		this.container = document.createElement('div');
 		this.container.className = 'search-container';
+
 		this.render();
+
+		this.logo = logo;
+		this.currentWeather = currentWeather;
 
 	}
 
@@ -39,13 +44,20 @@ class SearchPage {
 					.then(data => {
 
 						console.log(data);
+						this.showCurrentWeather(data);
 
-						alert(data.location.name + " " + data.location.country + " " + data.current.temp_c + " °C")
+						// alert(data.location.name + " " + data.location.country + " " + data.current.temp_c + " °C")
 
 					}).catch(err => console.log(err));
 			}
 		});
 
+	}
+
+	showCurrentWeather(data) {
+		this.logo.hidden();
+
+		this.currentWeather.show(data);
 	}
 
 }
