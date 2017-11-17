@@ -6,8 +6,6 @@ class Logo {
 
 	constructor() {
 		this.container = document.createElement('div');
-
-
 		this.container.classList.add('logo-container');
 		this.render();
 	}
@@ -15,6 +13,15 @@ class Logo {
 	render() {
 		this.container.innerHTML = template();
 	}
+
+	show() {
+		this.container.classList.remove('hidden');
+	}
+
+	hidden() {
+		this.container.classList.add('hidden');
+	}
+
 }
 
 module.exports = Logo;
