@@ -3,6 +3,7 @@
 const template = require('../../views/pages/CurrentWeather.hbs');
 const Search = require('./Search.js');
 const Button = require('../components/Button.js');
+const ForecastWeather = require('../pages/ForecastWeather');
 
 class CurrentWeatherPage {
 
@@ -10,27 +11,39 @@ class CurrentWeatherPage {
 		this.container = document.createElement('div');
 		this.container.classList.add('current-weather-container');
 
-		this.render();
+		const forecastWeather = new ForecastWeather();
+		this.container.appendChild(forecastWeather.container);
 
+		this.render();
 		this.search = search;
 
 	}
 
 	render() {
 		this.container.innerHTML = template();
+		this.button();
+	}
 
-		const button = new Button();
+	button() {
+		const button = new Button('Forecast Weather');
 		this.container.appendChild(button.container);
+
+		button.container.addEventListener('click', () => {
+			this.hidden();
+			this.container.nextElementSibling.classList.add('show');
+		});
 	}
 
 	show(data) {
-
 		this.container.classList.add('show');
 
 		let show = this.container.querySelector('.content');
 
 		show.innerHTML = this.printWeather(data);
-		console.warn('search data', this.search.data.location.name);
+	}
+
+	hidden() {
+		this.container.classList.remove('show');
 	}
 
 	printWeather(data) {
@@ -44,10 +57,6 @@ class CurrentWeatherPage {
 		return html;
 	}
 
-	hidden() {
-		this.container.classList.add('hidden');
-		console.warn('hidden result');
-	}
 }
 
 module.exports = CurrentWeatherPage;
