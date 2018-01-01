@@ -38,7 +38,7 @@ class SearchPage {
 		});
 
 		button.addEventListener('click', () => {
-			const data = fetch(`http://api.apixu.com/v1/current.json?key=37a2650f4cb24c0a87091627171511&q=${searchValue.value}`);
+			const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}`);
 
 			if(searchValue.value.length) {
 				data.then(res => res.json())
