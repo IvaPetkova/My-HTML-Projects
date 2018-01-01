@@ -3,26 +3,14 @@ module.exports = function(grunt) {
 	var config = {
 		pkg: grunt.file.readJSON('package.json'),
 
-		stylus: {
-			build: {
-				options: {
-					sourcemap: {inline: true},
-					compress: true,
-					'include css': true
-				},
-				files: {
-					'dist/app.min.css': ['src/styles/**/*.styl']
-				}
-			}
-		},
-
 		browserify: {
 			options: {
 				watch: true,
 				keepAlive: true,
 				transform: [
 					['hbsfy', {'extensions': ['hbs']}],
-					['babelify', {presets: ['es2015'], plugins: ['transform-class-properties']}]
+					['babelify', {presets: ['es2015'], plugins: ['transform-class-properties']}],
+					['stylify', {'extensions': ['styl']}]
 				]
 			},
 			dev: {
@@ -40,18 +28,20 @@ module.exports = function(grunt) {
 			build: ['dist/**/*.*']
 		},
 
-		watch: {
-			options: {
-
-			},
-			stylus: {
-				files: 'src/styles/**/*.styl',
-				tasks: 'stylus',
+		stylus: {
+			build: {
 				options: {
-					spawn: false,
+					watch: true,
+					sourcemap: {inline: true},
+					compress: true,
+					'include css': true
+				},
+				files: {
+					'dist/app.min.css': ['src/styles/**/*.styl']
 				}
 			}
 		},
+
 
 		connect: {
 			server: {

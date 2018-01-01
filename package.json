@@ -22,16 +22,17 @@
 		"grunt-check-dependencies": "^1.0.0",
 		"grunt-contrib-clean": "^1.0.0",
 		"grunt-contrib-concat": "^1.0.1",
+		"grunt-contrib-connect": "^1.0.2",
 		"grunt-contrib-stylus": "^1.2.0",
 		"grunt-contrib-watch": "^1.0.0",
-		"grunt-contrib-connect": "^1.0.2",
 		"grunt-eslint": "^19.0.0",
 		"grunt-gitinfo": "^0.1.8",
 		"grunt-sync": "^0.6.2",
 		"handlebars": "^4.0.6",
 		"hbsfy": "^2.7.0",
 		"load-grunt-tasks": "^3.5.2",
-		"minifyify": "^7.3.4"
+		"minifyify": "^7.3.4",
+		"stylify": "^1.4.0"
 	},
 	"browserify": {
 		"transform": [
@@ -51,6 +52,14 @@
 					],
 					"plugins": [
 						"transform-class-properties"
+					]
+				}
+			],
+			[
+				"stylify",
+				{
+					"extensions": [
+						"styl"
 					]
 				}
 			]
