@@ -25,7 +25,7 @@ class App {
 		let forecastWeather = new ForecastWeather();
 		container.querySelector('.visible-box').appendChild(forecastWeather.container);
 
-		let search = new Search(logo, currentWeather);
+		let search = new Search(logo, currentWeather, forecastWeather);
 		container.querySelector('.app').appendChild(search.container);
 
 	}

@@ -11,9 +11,6 @@ class CurrentWeatherPage {
 		this.container = document.createElement('div');
 		this.container.classList.add('current-weather-container');
 
-		const forecastWeather = new ForecastWeather();
-		this.container.appendChild(forecastWeather.container);
-
 		this.render();
 		this.search = search;
 
@@ -25,7 +22,7 @@ class CurrentWeatherPage {
 	}
 
 	button() {
-		const button = new Button('Forecast Weather');
+		const button = new Button('Go to Forecast Weather');
 		this.container.appendChild(button.container);
 
 		button.container.addEventListener('click', () => {
@@ -46,6 +43,7 @@ class CurrentWeatherPage {
 		this.container.classList.remove('show');
 	}
 
+	//ToDo: Move this data to appropriate files.
 	printWeather(data) {
 		const html = `
 			<span class="city-name">${data.location.name}</span>

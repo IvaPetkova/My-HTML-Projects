@@ -5,7 +5,7 @@ const Button = require('../../js/components/Button');
 
 class ForecastWeather {
 
-	constructor() {
+	constructor(search) {
 		this.container = document.createElement('div');
 		this.container.classList.add('forecast-weather-container');
 
@@ -19,7 +19,7 @@ class ForecastWeather {
 	}
 
 	button() {
-		const button = new Button('Current Weather');
+		const button = new Button('Go to Current Weather');
 		this.container.appendChild(button.container);
 
 		button.container.addEventListener('click', () => {
@@ -34,16 +34,17 @@ class ForecastWeather {
 		let show = this.container.querySelector('.content');
 
 		show.innerHTML = this.printWeather(data);
-		console.warn('search Forecast data', this.search.data.location.name);
 	}
 
 	hidden() {
 		this.container.classList.remove('show');
 	}
 
+	//ToDo: Move this data to appropriate files.
 	printWeather(data) {
 		const weatherOptions = `
 			<span class="city-name">${data.location.name}</span>
+			<span class="city-name">${data.location.country}</span>
 			<span class="temp">${data.current.temp_c + " °C"}</span>
 			<img class="icon" src="${data.current.condition.icon}">
 			<span class="condition-text">${data.current.condition.text}</span>

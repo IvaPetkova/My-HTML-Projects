@@ -5,7 +5,7 @@ const Logo = require('../components/Logo.js');
 
 class SearchPage {
 
-	constructor(logo, currentWeather) {
+	constructor(logo, currentWeather, forecastWeather) {
 		this.container = document.createElement('div');
 		this.container.className = 'search-container';
 
@@ -13,6 +13,7 @@ class SearchPage {
 
 		this.logo = logo;
 		this.currentWeather = currentWeather;
+		this.forecastWeather = forecastWeather;
 
 	}
 
@@ -23,7 +24,7 @@ class SearchPage {
 
 	search() {
 		let searchValue = this.container.querySelector('.search-value');
-		let button = this.container.querySelector('.btn');
+		let button = this.container.querySelector('.search .btn');
 
 		searchValue.addEventListener('input', () => {
 
@@ -43,10 +44,8 @@ class SearchPage {
 				data.then(res => res.json())
 					.then(data => {
 
-						console.log(data);
 						this.showCurrentWeather(data);
-
-						// alert(data.location.name + " " + data.location.country + " " + data.current.temp_c + " °C")
+						this.showForecastWeather(data);
 
 					}).catch(err => console.log(err));
 			}
@@ -58,6 +57,12 @@ class SearchPage {
 		this.logo.hidden();
 
 		this.currentWeather.show(data);
+	}
+
+	showForecastWeather(data) {
+		this.currentWeather.hidden();
+
+		this.forecastWeather.show(data);
 	}
 
 }
