@@ -1,18 +1,17 @@
 'use strict';
 
 const template = require('../../views/pages/CurrentWeather.hbs');
-const Search = require('./Search.js');
+const Search = require('../components/Search.js');
 const Button = require('../components/Button.js');
 const ForecastWeather = require('../pages/ForecastWeather');
 
 class CurrentWeatherPage {
 
-	constructor(search) {
+	constructor() {
 		this.container = document.createElement('div');
 		this.container.classList.add('current-weather-container');
 
 		this.render();
-		this.search = search;
 
 	}
 
