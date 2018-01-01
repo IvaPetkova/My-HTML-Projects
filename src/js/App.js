@@ -5,6 +5,7 @@ const Logo = require('./components/Logo.js');
 const CurrentWeather = require('./pages/CurrentWeather.js');
 const ForecastWeather = require('./pages/ForecastWeather.js');
 const Search = require('./components/Search.js');
+const ErrorPage = require('./pages/ErrorPage.js');
 
 class App {
 
@@ -27,6 +28,9 @@ class App {
 
 		let search = new Search(logo, currentWeather, forecastWeather);
 		container.querySelector('.app').appendChild(search.container);
+
+		let errorPage = new ErrorPage();
+		container.querySelector('.show-box').appendChild(errorPage.container);
 
 	}
 }
