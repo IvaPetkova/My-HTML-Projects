@@ -2,9 +2,9 @@
 
 const template = require('../views/index.hbs');
 const Logo = require('./components/Logo.js');
-const Search = require('./pages/Search.js');
 const CurrentWeather = require('./pages/CurrentWeather.js');
 const ForecastWeather = require('./pages/ForecastWeather.js');
+const Search = require('./components/Search.js');
 
 class App {
 
@@ -17,13 +17,13 @@ class App {
 		container.innerHTML = template();
 
 		let logo = new Logo();
-		container.querySelector('.visible-box').appendChild(logo.container);
+		container.querySelector('.show-box').appendChild(logo.container);
 
-		let currentWeather = new CurrentWeather(search);
-		container.querySelector('.visible-box').appendChild(currentWeather.container);
+		let currentWeather = new CurrentWeather();
+		container.querySelector('.show-box').appendChild(currentWeather.container);
 
 		let forecastWeather = new ForecastWeather();
-		container.querySelector('.visible-box').appendChild(forecastWeather.container);
+		container.querySelector('.show-box').appendChild(forecastWeather.container);
 
 		let search = new Search(logo, currentWeather, forecastWeather);
 		container.querySelector('.app').appendChild(search.container);
