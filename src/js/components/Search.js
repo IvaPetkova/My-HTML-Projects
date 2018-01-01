@@ -1,13 +1,13 @@
 'use strict';
 
-const template = require('../../views/pages/Search.hbs');
+const template = require('../../views/components/Search.hbs');
 const Logo = require('../components/Logo.js');
 
-class SearchPage {
+class Search {
 
 	constructor(logo, currentWeather, forecastWeather) {
 		this.container = document.createElement('div');
-		this.container.className = 'search-container';
+		this.container.classList.add('search-container');
 
 		this.render();
 
@@ -24,7 +24,7 @@ class SearchPage {
 
 	search() {
 		let searchValue = this.container.querySelector('.search-value');
-		let button = this.container.querySelector('.search .btn');
+		let button = this.container.querySelector('.search-container .btn');
 
 		searchValue.addEventListener('input', () => {
 
@@ -61,6 +61,7 @@ class SearchPage {
 	}
 
 	showCurrentWeather(data) {
+		console.warn('entered');
 		this.logo.hidden();
 
 		this.currentWeather.show(data);
@@ -74,4 +75,4 @@ class SearchPage {
 
 }
 
-module.exports = SearchPage;
+module.exports = Search;
