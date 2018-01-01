@@ -37,6 +37,13 @@ class SearchPage {
 
 		});
 
+		searchValue.addEventListener('keyup', (e) => {
+			e.preventDefault();
+			if (e.keyCode === 13) {
+				button.click();
+			}
+		});
+
 		button.addEventListener('click', () => {
 			const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}`);
 
