@@ -3,7 +3,6 @@
 const template = require('../../views/pages/CurrentWeather.hbs');
 const Search = require('../components/Search.js');
 const Button = require('../components/Button.js');
-const ForecastWeather = require('../pages/ForecastWeather');
 
 class CurrentWeatherPage {
 
@@ -17,6 +16,7 @@ class CurrentWeatherPage {
 
 	render() {
 		this.container.innerHTML = template();
+
 		this.button();
 	}
 

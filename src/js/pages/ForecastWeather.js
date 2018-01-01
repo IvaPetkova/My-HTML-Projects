@@ -15,6 +15,7 @@ class ForecastWeather {
 
 	render() {
 		this.container.innerHTML = template();
+
 		this.button();
 	}
 
