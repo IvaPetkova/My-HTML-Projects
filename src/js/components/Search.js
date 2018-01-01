@@ -2,6 +2,7 @@
 
 const template = require('../../views/components/Search.hbs');
 const Logo = require('../components/Logo.js');
+const Button = require('./Button.js');
 
 class Search {
 
@@ -19,7 +20,14 @@ class Search {
 
 	render() {
 		this.container.innerHTML = template();
+
+		this.button();
 		this.search();
+	}
+
+	button() {
+		const searchButton = new Button('Search');
+		this.container.appendChild(searchButton.container);
 	}
 
 	search() {

@@ -10,8 +10,8 @@ class Button {
 
 		this.render();
 
-		let test = this.container.querySelector('.label');
-		test.innerHTML = label;
+		let title = this.container.querySelector('.label');
+		title.innerHTML = label;
 	}
 
 	render() {
