@@ -69,6 +69,15 @@ class Search {
 
 		button.addEventListener('click', () => {
 			this.returnData();
+				function showError(error) {
+					if (error) {
+						let errorBox = document.querySelector('.error-page');
+						errorBox.innerHTML = 'Please, type correct city name.'
+					} else {
+						this.showCurrentWeather(data);
+						this.showForecastWeather(data);
+					}
+				};
 			searchValue.value = '';
 		});
 
