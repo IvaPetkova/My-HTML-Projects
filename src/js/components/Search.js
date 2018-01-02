@@ -64,12 +64,13 @@ class Search {
 
 					}).catch(err => console.log(err));
 			}
+
+			searchValue.value = '';
 		});
 
 	}
 
 	showCurrentWeather(data) {
-		console.warn('entered');
 		this.logo.hidden();
 
 		this.currentWeather.show(data);
