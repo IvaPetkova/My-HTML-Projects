@@ -47,10 +47,14 @@ class ForecastWeather {
 		console.log('forecastData ', forecastData);
 
 		forecastData.forEach(days => {
-			console.log(days.hour[0]);
+			console.log(days.date);
 			document.querySelector('.forecast-weather .content').innerHTML += `
 			<div class="hour">
-				<span class="city-name">${days.hour[0]}</span>
+				<span class="city-name">${days.date}</span>
+				<span class="city-name">${data.location.name}</span>
+				<img src="${days.day.condition.icon}">
+				<span class="city-name">${days.day.avgtemp_c + " °C"}</span>
+				<span class="city-name">${days.day.condition.text}</span>
 			</div>
 			`
 		});
