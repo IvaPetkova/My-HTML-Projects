@@ -42,14 +42,12 @@ class ForecastWeather {
 	//ToDo: Move this data to appropriate files.
 	printWeather(data) {
 
-		console.log(data);
 		const forecastData = data.forecast.forecastday;
-		console.log('forecastData ', forecastData);
 
 		forecastData.forEach(days => {
-			console.log(days.date);
+
 			document.querySelector('.forecast-weather .content').innerHTML += `
-			<div class="hour">
+			<div class="day">
 				<span class="city-name">${days.date}</span>
 				<span class="city-name">${data.location.name}</span>
 				<img src="${days.day.condition.icon}">
