@@ -32,9 +32,7 @@ class ForecastWeather {
 	show(data) {
 		this.container.classList.add('show');
 
-		let show = this.container.querySelector('.content');
-
-		show.innerHTML = this.printWeather(data);
+		this.printWeather(data);
 	}
 
 	hidden() {
@@ -43,15 +41,22 @@ class ForecastWeather {
 
 	//ToDo: Move this data to appropriate files.
 	printWeather(data) {
-		const weatherOptions = `
-			<span class="city-name">${data.location.name}</span>
-			<span class="city-name">${data.location.country}</span>
-			<span class="temp">${data.current.temp_c + " °C"}</span>
-			<img class="icon" src="${data.current.condition.icon}">
-			<span class="condition-text">${data.current.condition.text}</span>
-		`;
 
-		return weatherOptions;
+		const forecastData = data.forecast.forecastday;
+
+		forecastData.forEach(days => {
+
+			document.querySelector('.forecast-weather .content').innerHTML += `
+			<div class="day">
+				<span class="city-name">${days.date}</span>
+				<span class="city-name">${data.location.name}</span>
+				<img src="${days.day.condition.icon}">
+				<span class="city-name">${days.day.avgtemp_c + " °C"}</span>
+				<span class="city-name">${days.day.condition.text}</span>
+			</div>
+			`
+		});
+
 	}
 }
 
