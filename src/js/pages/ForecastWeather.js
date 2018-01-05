@@ -43,9 +43,7 @@ class ForecastWeather {
 	printWeather(data) {
 
 		const forecastData = data.forecast.forecastday;
-
 		forecastData.forEach(days => {
-
 			document.querySelector('.forecast-weather .content').innerHTML += `
 			<div class="day">
 				<span class="city-name">${days.date}</span>
