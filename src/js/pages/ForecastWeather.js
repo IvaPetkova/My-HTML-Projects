@@ -46,11 +46,11 @@ class ForecastWeather {
 		forecastData.forEach(days => {
 			document.querySelector('.forecast-weather').innerHTML += `
 			<div class="day">
-				<span class="city-name">${days.date}</span>
+				<span class="date">${days.date}</span>
 				<span class="city-name">${data.location.name}</span>
-				<img src="${days.day.condition.icon}">
-				<span class="city-name">${days.day.avgtemp_c + " °C"}</span>
-				<span class="city-name">${days.day.condition.text}</span>
+				<img class="icon" src="${days.day.condition.icon}">
+				<span class="temp">${days.day.avgtemp_c + " °C"}</span>
+				<span class="condition">${days.day.condition.text}</span>
 			</div>
 			`
 		});
