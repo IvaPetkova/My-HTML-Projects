@@ -33,7 +33,7 @@ class CurrentWeatherPage {
 	show(data) {
 		this.container.classList.add('show');
 
-		let show = this.container.querySelector('.content');
+		let show = this.container.querySelector('.current-weather');
 
 		show.innerHTML = this.printWeather(data);
 	}
