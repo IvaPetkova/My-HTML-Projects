@@ -22,17 +22,24 @@ body
 			background: url("../../images/main_background.jpg")
 			background-size: cover
 			position: relative
-			.show-box
-				position: absolute
-				top: 0
-				z-index: 1
-				width: 100%
-				height: 60%
+			.top
 				display: flex
 				align-items: center
-				justify-content: center
-			.img-container
-				width: 100%
-				img
-					opacity: 0.5
-					box-shadow: 0 35px 70px rgba(0,0,0, 0.57)
+				padding: 25px 0
+			.middle
+				position: relative
+				.img-container
+					width: 100%
+					img
+						opacity: 0.7
+						box-shadow: 0 10px 55px 5px rgba(0,0,0,0.27)
+						mix-blend-mode: soft-light
+				.show-box
+					position: absolute
+					top: 0
+					z-index: 1
+					width: 100%
+					height: 100%
+					display: flex
+					align-items: center
+					justify-content: center
