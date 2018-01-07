@@ -18,7 +18,7 @@ class App {
 		container.innerHTML = template();
 
 		let logo = new Logo();
-		container.querySelector('.show-box').appendChild(logo.container);
+		container.querySelector('.top').appendChild(logo.container);
 
 		let currentWeather = new CurrentWeather();
 		container.querySelector('.show-box').appendChild(currentWeather.container);

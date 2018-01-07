@@ -1,4 +1,7 @@
 .logo-container
+	position: relative
+	z-index: 1
+	transform: translate(0px,240px)
 	background: #ccc
 	-webkit-text-fill-color: transparent
 	-webkit-background-clip: text
@@ -7,4 +10,5 @@
 		font-size: 4rem
 		text-shadow: -1px 4px 1px #383541
 	&.hidden
-		display: none
+		transform: translate(0px,0px)
+		transition: transform .3s
