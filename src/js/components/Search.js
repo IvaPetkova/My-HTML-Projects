@@ -30,6 +30,25 @@ class Search {
 		this.container.appendChild(searchButton.container);
 	}
 
+	returnData() {
+		function takeData() {
+			return new Promise(function (resolve, reject) {
+
+				let searchValue = document.querySelector('.search-value');
+
+				const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
+
+				if (data !== undefined) {
+					resolve('data !== undefined ', console.log('searchValue.value ', searchValue.value));
+				} else {
+					reject('data = undefined', console.log('searchValue.value ', searchValue.value));
+				}
+			})
+		}
+
+		return takeData();
+	}
+
 	search() {
 		let searchValue = this.container.querySelector('.search-value');
 		let button = this.container.querySelector('.search-container .btn');
@@ -52,18 +71,15 @@ class Search {
 			}
 		});
 
-		button.addEventListener('click', () => {
-			const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
+		button.addEventListener('click', (data) => {
 
-			if(searchValue.value.length) {
-				data.then(res => res.json())
-					.then(data => {
-
-						this.showCurrentWeather(data);
-						this.showForecastWeather(data);
-
-					}).catch(err => console.log(err));
-			}
+			this.returnData(data)
+			.then(function(data) {
+				console.log(data);
+			})
+			.catch(function (error) {
+				console.log(error);
+			})
 
 			searchValue.value = '';
 		});
