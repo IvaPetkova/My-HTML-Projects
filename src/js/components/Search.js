@@ -30,6 +30,24 @@ class Search {
 		this.container.appendChild(searchButton.container);
 	}
 
+	returnData() {
+
+		let searchValue = document.querySelector('.search-value');
+
+		const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
+
+		if(data) {
+			data.then(res => res.json())
+				.then(data => {
+
+					this.showCurrentWeather(data);
+					this.showForecastWeather(data);
+
+				}).catch(err => console.log(err));
+		}
+
+	}
+
 	search() {
 		let searchValue = this.container.querySelector('.search-value');
 		let button = this.container.querySelector('.search-container .btn');
@@ -53,18 +71,7 @@ class Search {
 		});
 
 		button.addEventListener('click', () => {
-			const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
-
-			if(searchValue.value.length) {
-				data.then(res => res.json())
-					.then(data => {
-
-						this.showCurrentWeather(data);
-						this.showForecastWeather(data);
-
-					}).catch(err => console.log(err));
-			}
-
+			this.returnData();
 			searchValue.value = '';
 		});
 
