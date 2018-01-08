@@ -40,7 +40,6 @@ class ForecastWeather {
 
 	//ToDo: Move this data to appropriate files.
 	printWeather(data) {
-
 		const forecastWeatherContainer = document.querySelector('.forecast-weather')
 		forecastWeatherContainer.innerHTML = '';
 
