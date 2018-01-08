@@ -6,7 +6,7 @@ const Button = require('./Button.js');
 
 class Search {
 
-	constructor(logo, currentWeather, forecastWeather, state) {
+	constructor(logo, currentWeather, forecastWeather) {
 		this.container = document.createElement('div');
 		this.container.classList.add('search-container');
 
@@ -15,8 +15,6 @@ class Search {
 		this.logo = logo;
 		this.currentWeather = currentWeather;
 		this.forecastWeather = forecastWeather;
-
-		this.state = state;
 
 	}
 
@@ -41,7 +39,6 @@ class Search {
 			data.then(res => res.json())
 				.then(data => {
 					this.showCurrentWeather(data);
-
 
 				}).catch(err => console.log(err));
 		}
