@@ -4,7 +4,7 @@ const template = require('../../views/pages/CurrentWeather.hbs');
 const Search = require('../components/Search.js');
 const Button = require('../components/Button.js');
 
-class CurrentWeatherPage {
+class CurrentWeather {
 
 	constructor() {
 		this.container = document.createElement('div');
@@ -16,7 +16,6 @@ class CurrentWeatherPage {
 
 	render() {
 		this.container.innerHTML = template();
-
 		this.button();
 	}
 
@@ -56,4 +55,4 @@ class CurrentWeatherPage {
 
 }
 
-module.exports = CurrentWeatherPage;
+module.exports = CurrentWeather;

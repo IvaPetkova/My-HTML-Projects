@@ -6,7 +6,7 @@ const Button = require('./Button.js');
 
 class Search {
 
-	constructor(logo, currentWeather, forecastWeather) {
+	constructor(logo, currentWeather, forecastWeather, state) {
 		this.container = document.createElement('div');
 		this.container.classList.add('search-container');
 
@@ -15,6 +15,8 @@ class Search {
 		this.logo = logo;
 		this.currentWeather = currentWeather;
 		this.forecastWeather = forecastWeather;
+
+		this.state = state;
 
 	}
 
@@ -33,15 +35,13 @@ class Search {
 	returnData() {
 
 		let searchValue = document.querySelector('.search-value');
-
 		const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
 
 		if(data) {
 			data.then(res => res.json())
 				.then(data => {
-
 					this.showCurrentWeather(data);
-					this.showForecastWeather(data);
+
 
 				}).catch(err => console.log(err));
 		}
@@ -81,6 +81,10 @@ class Search {
 		this.logo.hidden();
 
 		this.currentWeather.show(data);
+
+		this.currentWeather.container
+			.querySelector('.btn')
+			.addEventListener('click', () => this.showForecastWeather(data));
 	}
 
 	showForecastWeather(data) {

@@ -5,7 +5,7 @@ const Button = require('../../js/components/Button');
 
 class ForecastWeather {
 
-	constructor(search) {
+	constructor() {
 		this.container = document.createElement('div');
 		this.container.classList.add('forecast-weather-container');
 
@@ -15,7 +15,6 @@ class ForecastWeather {
 
 	render() {
 		this.container.innerHTML = template();
-
 		this.button();
 	}
 
@@ -42,9 +41,12 @@ class ForecastWeather {
 	//ToDo: Move this data to appropriate files.
 	printWeather(data) {
 
+		const forecastWeatherContainer = document.querySelector('.forecast-weather')
+		forecastWeatherContainer.innerHTML = '';
+
 		const forecastData = data.forecast.forecastday;
 		forecastData.forEach(days => {
-			document.querySelector('.forecast-weather').innerHTML += `
+			forecastWeatherContainer.innerHTML += `
 			<div class="day">
 				<span class="date">${days.date}</span>
 				<span class="city-name">${data.location.name}</span>
