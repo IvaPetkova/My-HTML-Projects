@@ -45,6 +45,7 @@ class CurrentWeather {
 	printWeather(data) {
 		const html = `
 			<span class="city-name">${data.location.name}</span>
+			<span class="city-name">${data.location.country}</span>
 			<span class="temp">${data.current.temp_c + " °C"}</span>
 			<img class="icon" src="${data.current.condition.icon}">
 			<span class="condition-text">${data.current.condition.text}</span>
