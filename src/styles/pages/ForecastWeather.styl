@@ -9,6 +9,7 @@
 	.forecast-weather
 		display: grid
 		grid-column-gap: 15px
+		grid-row-gap: 15px
 		padding: 0 40px
 		font-size: 1.2rem
 		font-family: cursive
@@ -22,8 +23,6 @@
 			background: rgba(160, 158, 151, 0.5)
 			box-shadow: 4px 0 25px 3px rgba(0, 0, 0, 0.1)
 			border-radius: 5px
-			&:last-child
-				margin-right: 0
 			span
 				margin-bottom: 8px
 			.date
@@ -57,4 +56,3 @@
 @media (min-width: 1024px)
 	.forecast-weather
 		grid-template-columns: repeat(7, 13%)
-
