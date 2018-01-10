@@ -8,8 +8,8 @@
 	opacity: 0
 	.forecast-weather
 		display: grid
-		grid-template-columns: repeat(7, 13%)
 		grid-column-gap: 15px
+		padding: 0 40px
 		font-size: 1.2rem
 		font-family: cursive
 		text-align: center
@@ -41,3 +41,20 @@
 		opacity: 1
 		transition: opacity .3s
 		display: flex
+
+@media (min-width: 300px)
+	.forecast-weather
+		grid-template-columns: repeat(1, 99%)
+
+@media (min-width: 550px)
+	.forecast-weather
+		grid-template-columns: repeat(2, 66%)
+
+@media (min-width: 760px)
+	.forecast-weather
+		grid-template-columns: repeat(3, 32%)
+
+@media (min-width: 1024px)
+	.forecast-weather
+		grid-template-columns: repeat(7, 13%)
+
