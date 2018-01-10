@@ -8,20 +8,25 @@
 	opacity: 0
 	.forecast-weather
 		display: grid
-		grid-column-gap: 15px
+		grid-column-gap: 25px
 		grid-row-gap: 15px
-		padding: 0 40px
+		padding: 25px 40px
 		font-size: 1.2rem
 		font-family: cursive
 		text-align: center
 		color: #ccc
 		overflow: auto
+		background: rgba(255,255,255,0.11)
+		margin-bottom: 40px
+		width: 100%
+		justify-content: center
 		.day
 			display: flex
 			flex-direction: column
 			align-items: center
+			justify-content: space-around
 			padding: 13px 5px 10px 5px
-			background: rgba(160, 158, 151, 0.5)
+			background: rgba(160, 156, 151, 0.57)
 			box-shadow: 4px 0 25px 3px rgba(0, 0, 0, 0.1)
 			border-radius: 5px
 			span
@@ -30,11 +35,11 @@
 				font-size: 1rem
 			.city-name
 				margin-bottom: 8px
-				font-size: 1.4rem
+				font-size: 1.6rem
 			.condition-text
 				margin-top: -9px
 	.button-container
-		margin: 20px 0
+		margin: 30px 0
 		.btn
 			text-align: center
 	&.show
@@ -49,7 +54,13 @@
 @media (min-width: 760px)
 	.forecast-weather
 		grid-template-columns: repeat(3, 32%)
+		height: 76%
 
 @media (min-width: 1024px)
 	.forecast-weather
-		grid-template-columns: repeat(7, 13%)
+		grid-template-columns: repeat(7, 12%)
+		height: 55%
+
+@media (min-width: 1370px)
+	.forecast-weather
+		height: 65%
