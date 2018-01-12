@@ -30,21 +30,6 @@ class Search {
 		this.container.appendChild(searchButton.container);
 	}
 
-	returnData() {
-
-		let searchValue = document.querySelector('.search-value');
-		const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
-
-		if(data) {
-			data.then(res => res.json())
-				.then(data => {
-					this.showCurrentWeather(data);
-
-				}).catch(err => console.log(err));
-		}
-
-	}
-
 	search() {
 		let searchValue = this.container.querySelector('.search-value');
 		let button = this.container.querySelector('.search-container .btn');
@@ -69,17 +54,29 @@ class Search {
 
 		button.addEventListener('click', () => {
 			this.returnData();
-				function showError(error) {
-					if (error) {
-						let errorBox = document.querySelector('.error-page');
-						errorBox.innerHTML = 'Please, type correct city name.'
-					} else {
-						this.showCurrentWeather(data);
-						this.showForecastWeather(data);
-					}
-				};
+
 			searchValue.value = '';
 		});
+
+	}
+
+	returnData() {
+		let searchValue = document.querySelector('.search-value');
+
+		const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
+
+		if(data) {
+			data.then(res => res.json())
+				.then(data => {
+
+					if (data.error) {
+						this.showError(data.error);
+					}
+					else {
+						this.showCurrentWeather(data);
+					}
+				});
+		}
 
 	}
 
@@ -98,6 +95,11 @@ class Search {
 
 		this.forecastWeather.show(data);
 	}
+
+	showError(dataError) {
+		let errorBox = document.querySelector('.error-page');
+		errorBox.innerHTML = dataError.message;
+	};
 
 }
 
