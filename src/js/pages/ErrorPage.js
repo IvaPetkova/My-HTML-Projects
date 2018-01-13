@@ -14,8 +14,12 @@ class ErrorPage {
 		this.container.innerHTML = template();
 	}
 
-	show() {
+	show(error) {
 		this.container.classList.add('show');
+
+		let errorMessage = this.container.querySelector('.error-message');
+		errorMessage.innerHTML = error.message;
+
 	}
 }
 module.exports = ErrorPage;

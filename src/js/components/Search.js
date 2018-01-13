@@ -97,11 +97,8 @@ class Search {
 		this.forecastWeather.show(data);
 	}
 
-	showError(dataError) {
-		let errorBox = document.querySelector('.error-message');
-		errorBox.innerHTML = dataError.message;
-
-		this.errorPage.show();
+	showError(error) {
+		this.errorPage.show(error);
 	};
 
 }
