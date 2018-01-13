@@ -19,7 +19,10 @@ class ErrorPage {
 
 		let errorMessage = this.container.querySelector('.error-message');
 		errorMessage.innerHTML = error.message;
+	}
 
+	hidden() {
+		this.container.classList.remove('show');
 	}
 }
 module.exports = ErrorPage;
