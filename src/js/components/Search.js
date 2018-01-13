@@ -99,6 +99,7 @@ class Search {
 	}
 
 	showError(error) {
+		this.logo.hidden();
 		this.currentWeather.hidden();
 		this.forecastWeather.hidden();
 
