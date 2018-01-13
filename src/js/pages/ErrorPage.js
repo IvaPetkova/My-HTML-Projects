@@ -13,5 +13,9 @@ class ErrorPage {
 	render() {
 		this.container.innerHTML = template();
 	}
+
+	show() {
+		this.container.classList.add('show');
+	}
 }
 module.exports = ErrorPage;
