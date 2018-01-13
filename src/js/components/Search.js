@@ -82,7 +82,7 @@ class Search {
 	}
 
 	showCurrentWeather(data) {
-		this.logo.hidden();
+		this.logo.up();
 		this.errorPage.hidden();
 
 		this.currentWeather.show(data);
@@ -99,7 +99,7 @@ class Search {
 	}
 
 	showError(error) {
-		this.logo.hidden();
+		this.logo.up();
 		this.currentWeather.hidden();
 		this.forecastWeather.hidden();
 

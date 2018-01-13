@@ -18,7 +18,7 @@ class Logo {
 		this.container.classList.remove('hidden');
 	}
 
-	hidden() {
+	up() {
 		this.container.classList.add('hidden');
 	}
 
