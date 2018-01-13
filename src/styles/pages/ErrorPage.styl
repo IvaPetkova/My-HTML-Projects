@@ -1,3 +1,13 @@
 .error-page-container
-	&.hidden
-		display: none
+	display: none
+	.error-page
+		color: #7b5101
+		.icon
+			&:after
+				font-family: FontAwesome, sans-serif
+				content: "\f071"
+				font-size: 1.1rem
+		.error-message
+			padding-left: 10px
+	&.show
+		display: block
