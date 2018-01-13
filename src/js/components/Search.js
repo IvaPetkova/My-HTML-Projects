@@ -6,7 +6,7 @@ const Button = require('./Button.js');
 
 class Search {
 
-	constructor(logo, currentWeather, forecastWeather) {
+	constructor(logo, currentWeather, forecastWeather, errorPage) {
 		this.container = document.createElement('div');
 		this.container.classList.add('search-container');
 
@@ -15,6 +15,7 @@ class Search {
 		this.logo = logo;
 		this.currentWeather = currentWeather;
 		this.forecastWeather = forecastWeather;
+		this.errorPage = errorPage;
 
 	}
 
@@ -97,8 +98,10 @@ class Search {
 	}
 
 	showError(dataError) {
-		let errorBox = document.querySelector('.error-page');
+		let errorBox = document.querySelector('.error-message');
 		errorBox.innerHTML = dataError.message;
+
+		this.errorPage.show();
 	};
 
 }
