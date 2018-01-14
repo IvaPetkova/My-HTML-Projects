@@ -15,11 +15,11 @@ class Logo {
 	}
 
 	show() {
-		this.container.classList.remove('hidden');
+		this.container.classList.remove('up');
 	}
 
 	up() {
-		this.container.classList.add('hidden');
+		this.container.classList.add('up');
 	}
 
 }
