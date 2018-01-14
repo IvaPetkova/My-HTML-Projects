@@ -63,6 +63,7 @@ class Search {
 
 	returnData() {
 		let searchValue = document.querySelector('.search-value');
+		let isForecastShown = document.querySelector('.forecast-weather-container.show')
 
 		const data = fetch(`http://api.apixu.com/v1/forecast.json?key=2bfb747832cd43e3895140316170907&q=${searchValue.value}&days=7`);
 
@@ -72,6 +73,9 @@ class Search {
 
 					if (data.error) {
 						this.showError(data.error);
+					}
+					else if(isForecastShown) {
+						this.showForecastWeather(data);
 					}
 					else {
 						this.showCurrentWeather(data);
