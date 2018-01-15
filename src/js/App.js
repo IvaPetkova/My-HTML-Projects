@@ -30,7 +30,7 @@ class App {
 		container.querySelector('.show-box').appendChild(errorPage.container);
 
 		let search = new Search(logo, currentWeather, forecastWeather, errorPage);
-		container.querySelector('.app').appendChild(search.container);
+		container.querySelector('.bottom').appendChild(search.container);
 
 	}
 }
