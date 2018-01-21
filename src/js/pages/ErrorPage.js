@@ -16,9 +16,13 @@ class ErrorPage {
 
 	show(error) {
 		this.container.classList.add('show');
-
 		let errorMessage = this.container.querySelector('.error-message');
-		errorMessage.innerHTML = error.message;
+
+		if (error.message === 'Parameter q is missing.') {
+			errorMessage.innerHTML = 'You must type a city name.';
+		} else {
+			errorMessage.innerHTML = error.message;
+		}
 	}
 
 	hidden() {
