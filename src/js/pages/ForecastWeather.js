@@ -49,6 +49,7 @@ class ForecastWeather {
 			<div class="day">
 				<span class="date">${days.date}</span>
 				<span class="city-name">${data.location.name}</span>
+				<span class="country">${data.location.country}</span>
 				<img class="icon" src="${days.day.condition.icon}">
 				<span class="temp">${days.day.avgtemp_c + " °C"}</span>
 				<span class="condition">${days.day.condition.text}</span>
