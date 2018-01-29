@@ -45,6 +45,14 @@
 		transition: opacity .3s
 		display: flex
 
+	@media (max-height: 500px)
+		.forecast-weather
+			padding: 10px 40px
+			margin-bottom: 0
+			.day
+				span
+					margin-bottom: 6px
+
 	@media (min-width: 540px)
 		.forecast-weather
 			grid-template-columns: repeat(2, 44%)
