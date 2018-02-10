@@ -15,18 +15,28 @@
 		border-radius: 50%
 		width: 400px
 		height: 400px
-		font-size: 1.6rem
+		font-size: 1.8rem
 		font-family: cursive
 		color: #ccc
-		margin-bottom: 20px;
+		margin-bottom: 20px
 		.city-name
 			margin-bottom: 8px
-			font-size: 1.8rem
+			font-size: 1.6rem
 			text-align: center
+		.country
+			margin-bottom: 10px
+
 	&.show
 		opacity: 1
 		transition: opacity .3s
 		display: flex
+
+	@media (max-height: 500px)
+		.current-weather
+			font-size: 1.2rem
+			margin-bottom: 15px
+			.city-name
+				font-size: 1.4rem
 
 	@media (max-width: 540px)
 		.current-weather

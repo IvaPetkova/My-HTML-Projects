@@ -25,7 +25,7 @@
 			flex-direction: column
 			align-items: center
 			justify-content: space-around
-			padding: 13px 5px 10px 5px
+			padding: 13px 15px 10px 15px
 			background: rgba(160, 156, 151, 0.57)
 			box-shadow: 4px 0 25px 3px rgba(0, 0, 0, 0.1)
 			border-radius: 5px
@@ -44,6 +44,14 @@
 		opacity: 1
 		transition: opacity .3s
 		display: flex
+
+	@media (max-height: 500px)
+		.forecast-weather
+			padding: 10px 40px
+			margin-bottom: 0
+			.day
+				span
+					margin-bottom: 6px
 
 	@media (min-width: 540px)
 		.forecast-weather
